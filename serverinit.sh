@@ -5,7 +5,6 @@
 
 yum_config(){
   yum install epel-release -y
-  cd /etc/yum.repos.d/ && mkdir bak && mv -f *.repo bak/
   curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
   curl -o /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
   yum clean all && yum makecache
@@ -88,7 +87,7 @@ install_docker() {
 	yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 	yum-config-manager --disable docker-ce-test
 	yum-config-manager --disable docker-ce-nightly
-	yum install docker-ce docker-ce-cli containerd.io
+	yum install docker-ce docker-ce-cli containerd.io -y
 	systemctl start docker
 	systemctl enable docker
 	echo "docker install succeed!!"
