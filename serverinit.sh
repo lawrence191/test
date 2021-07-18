@@ -47,7 +47,7 @@ EOF
 #set sysctl
 sysctl_config(){
   cp /etc/sysctl.conf /etc/sysctl.conf.bak
-  cat > /etc/sysctl.conf << EOF
+  cat >> /etc/sysctl.conf << EOF
   net.ipv4.ip_forward = 1
   net.ipv4.conf.default.rp_filter = 1
   net.ipv4.conf.default.accept_source_route = 0
