@@ -10,7 +10,7 @@ yum_config(){
   yum clean all && yum makecache
   yum install -y yum-axelget
   yum -y install  iotop iftop net-tools lrzsz gcc gcc-c++ make cmake libxml2-devel openssl-devel \
-  curl curl-devel unzip sudo ntp libaio-devel  vim ncurses-devel autoconf automake zlib-devel perl  python3 python3-devel bash-completion
+  curl curl-devel unzip sudo ntp libaio-devel  vim ncurses-devel autoconf automake zlib-devel perl  python3 python3-devel bash-completion lrzsz
 }
 
 update_kernel(){
