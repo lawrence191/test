@@ -16,7 +16,7 @@ yum_config(){
 update_kernel(){
 	rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 	rpm -Uvh https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
-	yum --enablerepo=elrepo-kernel -y install kernel-ml kernel-ml-devel
+	yum --enablerepo=elrepo-kernel -y install kernel-lt kernel-devel kernel-headers
 	kernel_version=`grep -oE "CentOS.*\)" /etc/grub2.cfg|head -n 1`
 	grub2-set-default "${kernel_version}"
 
